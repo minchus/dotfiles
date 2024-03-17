@@ -52,3 +52,6 @@ alias td='tmux detach'
 tn () { tmux new -s $1 ;}
 ta () { tmux a -t $1 ;}
 tk () { tmux kill-session -t $1 ;}
+
+alias python='python3'
+alias pip='pip3'
