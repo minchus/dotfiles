@@ -6,3 +6,6 @@ Uses [Zsh](https://en.wikipedia.org/wiki/Z_shell), [Oh My Zsh](https://github.co
 ## Usage
 1. Install `chezmoi` with ```brew install chezmoi``` or follow the [install guide](https://github.com/twpayne/chezmoi/blob/master/docs/INSTALL.md). 
 2. Run `chezmoi init --apply https://github.com/minchus/dotfiles.git`.
+
+## Refresh Externals
+`chezmoi -R apply`
