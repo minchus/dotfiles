@@ -137,10 +137,16 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-
-alias pip="pip3"
-alias python="python3"
+eval "$(pyenv virtualenv-init -)"
 
 # flutter
 export PATH=$HOME/development/flutter/bin:$PATH
 export PATH=$HOME/.gem/bin:$PATH
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# docker
+alias dnode="docker run --rm -it -v $(pwd):/code --entrypoint /bin/sh node:14.16.0-alpine3.13"
