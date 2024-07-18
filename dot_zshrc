@@ -130,6 +130,8 @@ alias d="docker"
 alias dps="docker ps"
 alias hk="heroku"
 alias cm="chezmoi"
+alias rcedit="chezmoi edit ~/.zshrc"
+alias rcsource=". ~/.zshrc"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -149,4 +151,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # docker
-alias dnode="docker run --rm -it -v $(pwd):/code --entrypoint /bin/sh node:14.16.0-alpine3.13"
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+alias dr="docker run --rm -it -v $(pwd):/current --entrypoint /bin/sh"
+
