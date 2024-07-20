@@ -46,12 +46,16 @@ alias glp='git log -p'
 alias vi='vim'
 alias cls='printf "\033c"'
 
+alias d="docker"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias dc="docker-compose"
+alias rce="vim ~/.bashrc"
+alias rcs=". ~/.bashrc"
+
 # tmux aliases
 alias tls='tmux ls'
 alias td='tmux detach'
-tn () { tmux new -s $1 ;}
-ta () { tmux a -t $1 ;}
-tk () { tmux kill-session -t $1 ;}
-
-alias python='python3'
-alias pip='pip3'
+tn() { tmux new -s $1; }
+ta() { tmux a -t $1; }
+tk() { tmux kill-session -t $1; }

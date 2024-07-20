@@ -130,8 +130,8 @@ alias d="docker"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias cm="chezmoi"
-alias rcedit="chezmoi edit ~/.zshrc"
-alias rcsource=". ~/.zshrc"
+alias rce="chezmoi edit ~/.zshrc"
+alias rcs=". ~/.zshrc"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
