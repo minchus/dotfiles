@@ -128,7 +128,7 @@ alias mini="minikube"
 alias k="kubectl"
 alias d="docker"
 alias dps="docker ps"
-alias hk="heroku"
+alias dpsa="docker ps -a"
 alias cm="chezmoi"
 alias rcedit="chezmoi edit ~/.zshrc"
 alias rcsource=". ~/.zshrc"
@@ -153,4 +153,11 @@ export NVM_DIR="$HOME/.nvm"
 # docker
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 alias dr="docker run --rm -it -v $(pwd):/current --entrypoint /bin/sh"
+
+# tmux
+alias tls='tmux ls'
+alias td='tmux detach'
+tn () { tmux new -s $1 ;}
+ta () { tmux a -t $1 ;}
+tk () { tmux kill-session -t $1 ;}
 
