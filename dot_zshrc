@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -130,6 +131,7 @@ alias d="docker"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias cm="chezmoi"
+alias cmr="chezmoi -R apply"
 alias rce="chezmoi edit ~/.zshrc"
 alias rcs=". ~/.zshrc"
 
@@ -160,4 +162,7 @@ alias td='tmux detach'
 tn () { tmux new -s $1 ;}
 ta () { tmux a -t $1 ;}
 tk () { tmux kill-session -t $1 ;}
+
+# vps
+alias vps="ssh -p 61190 root@153.92.208.113"
 
