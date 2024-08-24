@@ -126,6 +126,7 @@ alias cls='printf "\033c"'
 alias vi="nvim"
 alias vim="nvim"
 alias mini="minikube"
+alias tf="terraform"
 alias k="kubectl"
 alias d="docker"
 alias dps="docker ps"

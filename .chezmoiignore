@@ -2,4 +2,5 @@ README.md
 .oh-my-zsh/cache/completions/
 .oh-my-zsh/custom/themes/powerlevel10k/**/*.zwc
 .oh-my-zsh/cache/grep-alias
+.oh-my-zsh/plugins/
 
