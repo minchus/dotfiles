@@ -5,6 +5,7 @@
                 "rules": [
                     {
                         "description": "Right OptionFN",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -33,6 +34,7 @@
                     },
                     {
                         "description": "Left OptionFN",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -61,6 +63,7 @@
                     },
                     {
                         "description": "Put symbols and arrow keys on Option layer",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -294,11 +297,7 @@
                                     "key_code": "close_bracket",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "equal_sign"
-                                    }
-                                ],
+                                "to": [{ "key_code": "equal_sign" }],
                                 "type": "basic"
                             },
                             {
@@ -465,21 +464,6 @@
                                 },
                                 "to": [{ "key_code": "right_arrow" }],
                                 "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "optionfn_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "delete_or_backspace" }],
-                                "type": "basic"
                             }
                         ]
                     },
@@ -505,6 +489,21 @@
                         ]
                     },
                     {
+                        "description": "Change left_control to to escape if pressed alone",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_control" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Caps to left_control",
                         "enabled": false,
                         "manipulators": [
@@ -519,20 +518,6 @@
                                         "lazy": false
                                     }
                                 ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Change left_control to to escape if pressed alone",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_control",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "left_control" }],
-                                "to_if_alone": [{ "key_code": "escape" }],
                                 "type": "basic"
                             }
                         ]
