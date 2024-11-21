@@ -35,7 +35,7 @@
       { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
       { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
 
-      { "before": ["h", "h"], "commands": ["editor.action.showDefinitionPreviewHover"] }
+      { "before": ["leader", "h"], "commands": ["editor.action.showDefinitionPreviewHover"] }
     ],
 
     "vim.visualModeKeyBindings": [
@@ -50,4 +50,6 @@
       // toggle comment selection
       { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
     ],
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
 }

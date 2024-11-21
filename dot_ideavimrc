@@ -1,0 +1,113 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" IdeaVim Wiki https://github.com/JetBrains/ideavim/wiki
+" Find more examples here: https://jb.gg/share-ideavimrc
+" The Essential IdeaVim Remaps https://towardsdatascience.com/the-essential-ideavim-remaps-291d4cd3971b
+" https://gist.github.com/johnnymillergh/a45b557af27fcbf8880172c3ece81726
+
+" Source your .vimrc
+" source ~/.vimrc
+
+let mapleader=" "
+set clipboard+=unnamedplus
+set relativenumber
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+set incsearch
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+set sneak
+set ideajoin
+set which-key
+" disable which-key timeout
+set notimeout
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+map <leader>e :NERDTree<CR>
+
+" Key Mappings
+
+" splits
+map <leader>v <Action>(SplitVertically)
+map <leader>s <Action>(SplitHorizontally)
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Navigate project errors
+map [e <Action>(GotoPreviousError)
+map ]e <Action>(GotoNextError)
+
+" Navigate git changes
+map [c <Action>(VcsShowPrevChangeMarker)
+map ]c <Action>(VcsShowNextChangeMarker)
+
+" Navigate methods
+map [m <Action>(MethodUp)
+map ]m <Action>(MethodDown)
+
+" Tab navigation
+map <S-l> <Action>(NextTab)
+map <S-h> <Action>(PreviousTab)
+
+" LSP
+map gi <Action>(GotoImplementation)
+map <leader>i <Action>(ToggleInlayHintsGloballyAction)
+map <leader>p <Action>(ReformatCode)
+map <leader>r <Action>(RenameElement)
+map <leader>ho <Action>(ShowErrorDescription)
+map <leader>hh <Action>(QuickJavaDoc)
+map <leader>u <Action>(FindUsages)
+map <leader>cl <Action>(CommentByLineComment)
+map <leader>cb <Action>(CommentByBlockComment)
+
+" Folding
+map<leader>0 <Action>(CollapseAllRegions)
+map<leader>9 <Action>(ExpandAllRegions)
+map<leader>1 <Action>(ExpandAllToLevel1)
+map<leader>= <Action>(ExpandRegionRecursively)
+map<leader>- <Action>(CollapseRegionRecursively)
+
+" Debugging
+map <leader>bt <Action>(ToggleLineBreakpoint)
+map <leader>bv <Action>(ViewBreakpoints)
+
+" Show terminal
+map <leader>t <Action>(ActivateTerminalToolWindow)
+
+" Close windows
+map <leader>q <Action>(CloseContent)
+map <leader>Q <Action>(CloseAllEditors)
+map <leader>k <Action>(HideAllWindows)
+
+" Open ideavimrc
+map <leader>; :e ~/.ideavimrc<CR>
+
+" Zen mode
+map <leader>z <Action>(ToggleZenMode)
+
+" Use IDE search instead of vim search
+map / <Action>(Replace)
+
+
+""" Shortcuts handler for conflicts between JetBrains and Vim
+if has("macunix")
+    " Configuration options for macOS
+    echom "macOS system detected"
+elseif has("unix")
+    echom "Unix-like system detected"
+    " Configuration options for Unix-like systems
+elseif has("win32")
+    echom "Windows system detected"
+    " Configuration options for Windows
+    sethandler <C-C> a:vim
+    sethandler <C-F> a:ide
+    sethandler <C-V> a:vim
+endif
