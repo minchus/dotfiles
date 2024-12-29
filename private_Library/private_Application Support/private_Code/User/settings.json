@@ -52,4 +52,6 @@
     ],
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
+    "vim.statusBarColors.commandlineinprogress": "",
+    "vim.sneak": true,
 }

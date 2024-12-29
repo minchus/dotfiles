@@ -137,10 +137,17 @@ alias k="kubectl"
 alias d="docker"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
+
 alias cm="chezmoi"
 alias cmr="chezmoi -R apply"
 alias rce="chezmoi edit ~/.zshrc"
 alias rcs=". ~/.zshrc"
+alias tme="chezmoi edit ~/.tmux.conf"
+alias tms="tmux source-file ~/.tmux.conf"
+
+# Add bin directory to path
+export PATH="~/bin:$PATH"
+export PIPX_HOME=~/.local/pipx
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -164,7 +171,13 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 alias dr="docker run --rm -it -v $(pwd):/current --entrypoint /bin/sh"
 
 # tmux
-tn () { tmux new -s $1 ;}
+alias tls='tmux ls'
+alias td='tmux detach'
+tnw() { tmux new-window -n ${1:-unnamed}; }
+tns() { tmux new -s ${1:-default}; }
+ta() { tmux attach -t $1; }
+tk() { tmux kill-session -t $1; }
+
 ssh() {
     if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
         tmux rename-window "$(echo $* | cut -d ' ' -f 1)"

@@ -490,6 +490,7 @@
                     },
                     {
                         "description": "Change left_control to to escape if pressed alone",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -523,6 +524,7 @@
                     },
                     {
                         "description": "Switch @ and double quote symbols",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
